@@ -75,8 +75,8 @@ date="$(date -u +"%Y%m%d%H%M%S")";
 # Clone time
 echo " ";
 echo "Cloning MinMicroG...";
-git clone "https://github.com/FriendlyNeighborhoodShane/MinMicroG";
-git clone "https://github.com/FriendlyNeighborhoodShane/MinMicroG-abuse-CI" "MinMicroG-resdl";
+git clone "https://github.com/MizuNotCool/MinMicroG";
+git clone "https://github.com/MizuNotCool/MinMicroG-abuse-CI" "MinMicroG-resdl";
 (
   cd "./MinMicroG-resdl" || error "could not cd";
   git fetch origin "refs/volatile/current:current";
@@ -98,7 +98,7 @@ echo " ";
 echo " ";
 echo "Setting up build...";
 ln -frs "./MinMicroG-resdl/system" "./MinMicroG-resdl/util" "./MinMicroG/resdl/";
-cert="$(curl -fs "https://api.github.com/repos/FriendlyNeighborhoodShane/MinMicroG_releases/releases" | jq -r ".[].assets[].browser_download_url" | grep "certs.tar.gz$" | head -n1)";
+cert="$(curl -fs "https://api.github.com/repos/MizuNotCool/MinMicroG_releases/releases" | jq -r ".[].assets[].browser_download_url" | grep "certs.tar.gz$" | head -n1)";
 [ "$cert" ] && {
   {
     echo " ";
